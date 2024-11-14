@@ -11,9 +11,14 @@ def index(id):
 
     if response.status_code == 200:
         data = response.json()
-        return render_template("index.html", data = data)
+        pokemon = {
+            'nombre' : data['name'],
+            'imagen' : data['sprites']['front_default'],
+            'id' : data['id']
+            }
+        return render_template("index.html", pokemon = pokemon)
     else:
-        print("Fallo la petición")
+        return "Fallo la peticion"
 
 if __name__ == "__main__":
     #index(100)
