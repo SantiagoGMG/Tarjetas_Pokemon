@@ -1,1 +1,4 @@
 env/
+.venv/
+__pycache__/
+how_to_run.txt
